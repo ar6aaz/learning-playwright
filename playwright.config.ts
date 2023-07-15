@@ -4,8 +4,11 @@ const config: PlaywrightTestConfig = {
   // testMatch: ["tests/basicIntercations.test.ts"],
   use: {
     headless: true,
-    screenshot: "only-on-failure",
-    video:"retain-on-failure"
+    screenshot: "on",
+    video:"retain-on-failure",
+    launchOptions: {
+      slowMo: 1000
+    }
   },
   retries: 2,
   reporter: [["dot"],["json",{
